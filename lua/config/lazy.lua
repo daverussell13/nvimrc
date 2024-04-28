@@ -20,11 +20,7 @@ require("lazy").setup({
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
       opts = {
-        colorscheme = function()
-          vim.cmd("colorscheme gruvbox")
-          vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-          vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-        end,
+        colorscheme = "gruvbox"
       },
     },
     -- import any extras modules here
