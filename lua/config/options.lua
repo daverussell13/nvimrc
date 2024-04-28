@@ -42,3 +42,12 @@ vim.o.shellxquote = ""
 
 -- Disable autoformat
 vim.g.autoformat = false
+
+-- User options
+vim.scriptencoding = "utf-8"
+vim.opt.encoding = "utf-8"
+vim.opt.fileencoding = "utf-8"
+vim.opt.scrolloff = 8
+vim.opt.backspace = {"start", "eol", "indent"}
+vim.opt.breakindent = true
+vim.opt.path:append({"**"})
