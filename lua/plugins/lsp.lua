@@ -28,25 +28,18 @@ return {
       ---@diagnostic disable-next-line: missing-fields
       servers = {
         ---@diagnostic disable-next-line: missing-fields
-        volar = {},
+        volar = {
+          filetypes = { "vue", "javascript", "typescript", "javascriptreact", "typescriptreact" },
+          init_options = {
+            vue = {
+              hybridMode = false,
+            },
+            typescript = {
+              tsdk = vim.fn.getcwd() .. "node_modules/typescript/lib",
+            },
+          },
+        },
       },
-      ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
-      setup = {
-        tsserver = function(_, opts)
-          local mason_registry = require('mason-registry')
-          local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path()
-          local vue_typescript_plugin_path = vue_language_server_path .. '\\node_modules\\@vue\\language-server\\node_modules\\@vue\\typescript-plugin'
-          opts.init_options = {
-            plugins = {
-              {
-                name = '@vue/typescript-plugin',
-                location = vue_typescript_plugin_path,
-                languages = { 'vue' }
-              }
-            }
-          }
-        end
-      }
     },
   }
 }
