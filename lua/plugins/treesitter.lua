@@ -2,8 +2,8 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
+    opts = function(_, opts)
+      vim.list_extend(opts.ensure_installed, {
         -- Default config (Don't need to add) --
         -- "bash", "c", "diff", "html", "javascript", "jsdoc", "json", "jsonc", "lua",
         -- "luadoc", "luap", "markdown", "markdown_inline", "python", "query", "regex",
@@ -13,7 +13,7 @@ return {
         "gitignore",
         "sql",
         "vue"
-      },
-    }
+      })
+    end
   },
 }

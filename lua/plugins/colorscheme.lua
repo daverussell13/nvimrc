@@ -1,10 +1,7 @@
 return {
   {
-    "ellisonleao/gruvbox.nvim",
+    "sainnhe/gruvbox-material",
     lazy = true,
     priority = 1000,
-    opts = {
-      transparent_mode = true
-    }
   },
 }

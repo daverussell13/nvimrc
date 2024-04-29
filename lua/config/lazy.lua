@@ -19,9 +19,13 @@ require("lazy").setup({
     {
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
-      opts = {
-        colorscheme = "gruvbox"
-      },
+	    opts = {
+        colorscheme = function()
+          vim.g.gruvbox_material_background = 'soft'
+          vim.g.gruvbox_material_better_performance = 1
+          vim.cmd('colorscheme gruvbox-material')
+        end
+	    },
     },
     -- import any extras modules here
     { import = "lazyvim.plugins.extras.linting.eslint" },
@@ -39,7 +43,7 @@ require("lazy").setup({
   },
   install = {
     colorscheme = {
-      "gruvbox",
+      "gruvbox-material",
     },
   },
   checker = { enabled = true }, -- automatically check for plugin updates

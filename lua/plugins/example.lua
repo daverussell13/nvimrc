@@ -69,8 +69,10 @@ return {
     ---@class PluginLspOpts
     opts = {
       ---@type lspconfig.options
+      ---@diagnostic disable-next-line: missing-fields
       servers = {
         -- pyright will be automatically installed with mason and loaded with lspconfig
+        ---@diagnostic disable-next-line: missing-fields
         pyright = {},
       },
     },
@@ -92,8 +94,10 @@ return {
     ---@class PluginLspOpts
     opts = {
       ---@type lspconfig.options
+      ---@diagnostic disable-next-line: missing-fields
       servers = {
         -- tsserver will be automatically installed with mason and loaded with lspconfig
+        ---@diagnostic disable-next-line: missing-fields
         tsserver = {},
       },
       -- you can do any additional lsp server setup here
@@ -102,6 +106,8 @@ return {
       setup = {
         -- example to setup with typescript.nvim
         tsserver = function(_, opts)
+          -- local mason_registry = require('mason-registry')
+          -- local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path() .. '\\node_modules\\@vue\\language-server'
           require("typescript").setup({ server = opts })
           return true
         end,

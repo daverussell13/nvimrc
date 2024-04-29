@@ -29,7 +29,7 @@ if vim.g.neovide then
 
   -- UI
   vim.g.neovide_fullscreen = false
-  vim.g.neovide_transparency = 0.75
+  vim.g.neovide_transparency = 1
 end
 
 -- Terminal Options
